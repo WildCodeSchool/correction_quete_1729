@@ -1,7 +1,9 @@
-name: docker-ci
+name: jest-ci
 
 on:
   push:
+    branches-ignore:
+      - "master"
 
 jobs:
   test-front:
