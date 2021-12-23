@@ -27,6 +27,10 @@ process.on("SIGTERM", () => {
     res.json({ message: "Hey, I'm Tom, the API" });
   });
 
+  app.get("/posts", async (req, res) => {
+    res.json(await MessageModel.find());
+  });
+
   app.post("/", async (req, res) => {
     console.log("Got a post");
     const message = new MessageModel({ sentence: "Hey I'm a new post!" });
